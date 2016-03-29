@@ -296,6 +296,7 @@ transition: all 1s;
     padding: 2%;
       }
   footer{
+    opacity: 0;
        width: 100%;
     background-color: #282828;
   }
@@ -518,6 +519,10 @@ $(document).ready(function() {
 
               if( $(".video").offset().top < $(window).scrollTop() + $(window).height() ){
                 $(".video").animate({opacity:'1'},1200);
+              }
+
+            if( $("footer").offset().top < $(window).scrollTop() + $(window).height() ){
+                $("footer").animate({opacity:'1'},1300);
               }
 
             });
