@@ -40,7 +40,7 @@ section.first{
    background-color: rgba(32,32,32, 0.9);
   box-shadow: 0px 0px 5px 0px black;
   position: fixed;
-  z-index: 999;
+  z-index: 1999;
   width: 100%;
   margin: 0;
   border-radius: 0px;
@@ -226,7 +226,7 @@ transition-timing-function: ease-in-out;
   padding: 2%;
   width: 70%;
 }
-.platform .device{color:white;padding: 1%;font-size: 17px;}
+.platform .device{color:white;padding: 1%;font-size: 17px;cursor: pointer;}
 .platform .glyphicon{margin: 2% 0;color:#006699;font-size: 19px;}
 .subscribe{
   cursor: pointer;
@@ -257,11 +257,11 @@ section.video{
   background-repeat: no-repeat;
   position: relative;
   display: inline-block;
-  min-height: 250px;
+  min-height: 200px;
   min-width: 300px;
-  width: 30%;
+  width: 25%;
   box-shadow: 0px 0px 5px 0px gray;
-  margin: 1%;
+  margin: 1.5%;
   -webkit-transition: all 1s; /* Safari */
 transition: all 1s;
 }
@@ -284,7 +284,7 @@ transition: all 1s;
   width: 100%;
   padding: 3% 0;
   text-align: center;
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(10, 10, 10);
   color:silver;
   display: none;
   }
@@ -292,7 +292,7 @@ transition: all 1s;
     color:#484848;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    font-size: 30px;
+    font-size: 40px;
     padding: 2%;
       }
   footer{
@@ -333,7 +333,7 @@ text-transform: uppercase;
     <div class="collapse navbar-collapse" id="myNavbar">
       <a href="sliver.html"><img src="logo.gif"/></a>
       <ul class="nav navbar-nav">
-        <li><a href="#"><em>Sliver TV</em></a></li>
+        <li><a href="#"><em id="reset"><b>Sliver TV</b></em></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -514,7 +514,7 @@ $(document).ready(function() {
                   top:'-=40px'
                 }, 1200);
 
-             $(".subscribe, .platform").delay(2000).animate({opacity:'1'},500);
+             $(".subscribe, .platform").delay(700).animate({opacity:'1'},500);
               }
 
               if( $(".video").offset().top < $(window).scrollTop() + $(window).height() ){
