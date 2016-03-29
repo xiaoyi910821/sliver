@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>sliver tv demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+*:focus {
+    outline: none;
+}
+* a{
+  color:inherit;
+}
+body, html{
+   font-family: Century Gothic, sans-serif;
+  background: #101010 ;
+  width: 100%;
+  height: 100%;
+}
+section.first{
+  box-shadow: 0px 0px 4px 0px #101010;
+  position: relative;
+  width: 100%;
+  height: 95%;
+}
+.navbar{
+  padding: 0.5%;
+  font-family: Century Gothic, sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+   background-color: rgba(32,32,32, 0.9);
+  box-shadow: 0px 0px 5px 0px black;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  margin: 0;
+  border-radius: 0px;
+}
+.navbar em{
+  font-size: 17px;
+  font-style: normal;
+  color:white;
+}
+.navbar img{
+  float: left;
+  width: 90px;
+}
+#myNavbar ul{
+  padding-top: 1%;
+}
+input{
+  border-radius: 3px;
+  padding: 0 5px;
+  border: 1px solid gray;
+  background-color: transparent;
+  color:white;
+  width: 0px;
+  margin-top:10px;
+  opacity: 0;
+  vertical-align: middle;
+}
+.fadein { 
+  height:100%;
+  overflow: hidden;
+  position:relative; 
+}
+.fadein img ,.fadein video
+{ 
+  position:absolute; 
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  left:0; 
+  top:0; 
+}
+.large-title{
+ 
+  z-index: 999;
+  width: 100%;
+  color: #f8f8f8;
+  font-size: 38px;
+  letter-spacing: 2px;
+  margin-top: -50px;
+  position: absolute;
+  top: 40%;
+  text-align: center;
+}
+.third-title{
+  cursor: pointer;
+  color:#282828;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  padding: 1%;
+  margin: 2% 35%;
+  min-width: 100px;
+    border-radius: 5px;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: all 0.9s; /* Safari */
+    transition: all 0.9s;
+}
+.third-title:hover{
+  color:white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.first-title, .second-title, .third-title{opacity: 0;}
+#reset, #search{color:#e8e8e8;
+-webkit-transition: color 0.5s; /* Safari */
+transition: color 0.5s;
+transition-timing-function: ease-in-out;
+}
+#reset:hover, #search:hover{
+  color:#0077b3;
+}
+.transition{
+
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -20px;
+  background-color: #f0f0f0;
+  border:none;
+  color:gray;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border-radius:100px;
+  line-height: 0px;
+  -webkit-transition: all 0.5s; /* Safari */
+transition: all 0.5s;
+transition-timing-function: ease-in-out;
+
+}
+.transition:hover{
+  color:#0077b3;
+  box-shadow: 0px 0px 4px 0px black;
+  background-color: #404040 ;
+}
+section.second{
+background: url(bg2.jpg) 50% 0 no-repeat fixed;
+  position: relative;
+  margin-top: 50px;
+ box-shadow: 0px 0px 4px 0px black;
+  background-color: #000000;
+  height: 750px;
+  overflow: hidden;
+}
+.second-layer{
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000000;
+}
+.content{
+  text-align: center;
+  padding: 13% 3%;
+  width: 100%;
+  color: #A0A0A0 ;
+  text-shadow:0px 0px 2px black;
+  position: absolute;
+  z-index: 100
+  ;
+}
+
+.content-left, .content-right{
+  text-align: left;
+  word-wrap: break-word;
+   line-height: 35px;
+  word-spacing: 6px;
+  font-size: 16px;
+
+  width: 48%;
+  padding: 0 3%;
+  vertical-align: top;
+  display: inline-block;
+}
+.content-left{
+  border-right: 1px solid #686868 ;
+}
+.intro-title{
+  padding: 7% 0;
+   font-size: 30px;
+  text-align: center;
+}
+.content button{
+  margin-top:4%;
+  margin-bottom: 3%;
+  padding: 1% 6%;
+  border-radius: 5px;
+  font-size: 19px;
+  background-color: rgba(255, 255, 255, 0.7);
+    -webkit-transition: all 0.5s; /* Safari */
+transition: all 0.5s;
+transition-timing-function: ease-in-out;
+  color:black;
+  border:0;
+  opacity: 0;
+
+}
+.content button:hover{
+  border:1px gray;
+  color:#0077b3;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.subscribe{
+  cursor: pointer;
+  text-shadow:0px 0px 4px black;
+  font-weight: 600;
+  word-spacing: 5px;
+  opacity: 0;
+  color:white;
+  font-size: 28px;
+  padding: 1%;
+      -webkit-transition: all 0.5s; /* Safari */
+transition: all 0.5s;
+transition-timing-function: ease-in-out;
+}
+.subscribe:hover{
+  color:#0077b3;
+}
+section.video{
+  box-shadow: 0px 0px 5px 0px black;
+  background-color: #e8e8e8;
+  padding: 6%;
+  opacity: 0;
+  position: relative;
+  text-align: center;
+}
+.float-box{
+  cursor: pointer;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  min-height: 250px;
+  min-width: 300px;
+  width: 30%;
+  box-shadow: 0px 0px 5px 0px gray;
+  margin: 1%;
+  -webkit-transition: all 1s; /* Safari */
+transition: all 1s;
+}
+.float-box:hover::after{
+  content: '';
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(zoom.png) no-repeat center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 6px 0px black;
+}
+.description{
+  z-index: 999;
+  box-shadow: 0px 0px 4px 0px black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3% 0;
+  text-align: center;
+  background-color: rgb(48, 48, 48);
+  color:silver;
+  display: none;
+  
+  }
+  .video-title{
+    color:#484848;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    padding: 2%;
+      }
+  footer{
+    width: 100%;
+    background-color: #181818;
+  }
+  footer img{
+    width: 100%;
+  }
+</style>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <a href="sliver.html"><img src="logo.gif"/></a>
+      <ul class="nav navbar-nav">
+        <li><a href="#"><em>Sliver TV</em></a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><input type="text" name="search"></li>
+        <li ><a href="#" id="search"><span class="glyphicon glyphicon-search"></span> search |</a></li>
+        <li><a href="#" id="reset"><span class="glyphicon glyphicon-user"></span> Sign Up |</a></li>
+        <li><a href="#" id="reset"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="first">
+<div class="fadein">
+<div><img src="fade1.jpg"/></div>
+  <div><img src="fade2.jpg"/></div>
+  <div><img src="fade3.jpg"/></div>
+</div>
+  <div class="large-title">
+    <p class="first-title">Sliver TV</p>
+    <p class="second-title">The Next Generation VR Video Platform</p>
+    <p class="third-title">sign up to create your own video</p>
+  </div>
+</section>
+
+ <button type="button" class="transition">
+  <a href="#"><span class="glyphicon glyphicon-menu-down"></span></a>
+ </button>
+
+ <section class="second">
+  <div class="second-layer"></div>
+  <div class="content">
+    <div class="content-left">
+      <div class="intro-title">What We Do</div>
+      <p>
+        Virtual reality or virtual realities (VR), also known as immersive multimedia or computer-simulated reality,is a computer technology that replicates an environment, real or imagined, and simulates a user's physical presence that environment in a way that allows the user to interact with it. 
+      </p>
+    </div>
+    <div class="content-right">
+      <div class="intro-title">Who We Are</div>
+      <p>we're a next-generation VR video platform startup launched by the co-founder of Tapjoy, a leading mobile advertising company.</p>
+       <p>We are funded by top-tier Silicon Valley VCs including DCM, Sierra ventures, VR Fund as well as leading Hollywood/media investors. </p>
+    </div>
+
+    <button>Download</button>
+    <div class="subscribe"><span class="glyphicon glyphicon-envelope" style="font-size:23px;color:#0077b3"></span> Subscribe to our Weekly Updates</div>
+  </div>
+ </section>
+
+ <section class="video">
+  <div class="video-title">New Upload This Week</div>
+  <div class="float-box" style="background:url(game1.jpg) center">
+    <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game2.jpg) center">
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game3.jpg) center">
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div><br>
+
+    <div class="float-box" style="background:url(game4.jpg) center">
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game5.jpg) left">
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game6.jpg) center">
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+</section>
+<footer>
+  <img src="footer.png"/>
+</footer>
+
+
+<script>
+$(function(){
+    $('.fadein div:gt(0)').hide();
+    setInterval(function(){
+      $('.fadein div:first-child').fadeOut(2000)
+         .next('div').fadeIn(1000)
+         .end().appendTo('.fadein');}, 
+      4000);
+    $(".large-title").animate({top:'+=22px'}, 1200);
+    $(".first-title").animate({
+      opacity: 1}, 500);
+    $(".second-title").delay(600).animate({opacity: 1}, 500);
+    $(".third-title").delay(700).animate({opacity: 1}, 500);
+
+});
+$(document).ready(function() {
+  $("#search, input").mouseover(function(){
+    $("input").animate({
+        opacity: 1,
+        width:'150px'
+      },700);
+});
+    $(".navbar").mouseleave(function(){
+    $("input").animate({
+        opacity: 0,
+        width:'0px'
+      },300);
+});
+
+  $(".float-box").hover(function(){
+    $(this).find("div").fadeIn(500);
+    }, function(){
+      $(this).find("div").fadeOut(200);
+});
+  var fire=0;
+  $(".transition").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".content").offset().top},
+        1600);
+});
+  //var content_top=$(window).height();
+  //alert(content_top);
+
+ $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+             if( $(".second").offset().top < $(window).scrollTop() + $(window).height() ){
+                $(".second-layer").animate({opacity:'0.7'},1200);
+              }
+            if( $(".content").offset().top < $(window).scrollTop() + $(window).height()&&fire==0){
+              fire=1;
+                          $(".content").delay(1100).animate({
+                  opacity:'1',
+                  top:'-=35px'
+                }, 1200);
+
+             $(".subscribe, .content button").delay(2000).animate({opacity:'1'},500);
+              }
+
+              if( $(".video").offset().top < $(window).scrollTop() + $(window).height() ){
+                $(".video").animate({opacity:'1'},1200);
+              }
+
+            });
+
+  })
+</script>
+
+</body>
+</html>
