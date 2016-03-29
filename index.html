@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <style>
 *:focus {
@@ -54,7 +52,7 @@ section.first{
 #myNavbar ul{
   padding-top: 1%;
 }
-input{
+.navbar input{
   border-radius: 3px;
   padding: 0 5px;
   border: 1px solid gray;
@@ -151,7 +149,7 @@ background: url(bg2.jpg) 50% 0 no-repeat fixed;
   margin-top: 50px;
  box-shadow: 0px 0px 4px 0px black;
   background-color: #000000;
-  height: 750px;
+  height: 180%;
   overflow: hidden;
 }
 .second-layer{
@@ -163,7 +161,7 @@ background: url(bg2.jpg) 50% 0 no-repeat fixed;
 }
 .content{
   text-align: center;
-  padding: 13% 3%;
+  padding-top:13%;
   width: 100%;
   color: #A0A0A0 ;
   text-shadow:0px 0px 2px black;
@@ -192,10 +190,21 @@ background: url(bg2.jpg) 50% 0 no-repeat fixed;
    font-size: 30px;
   text-align: center;
 }
-.content button{
-  margin-top:4%;
-  margin-bottom: 3%;
-  padding: 1% 6%;
+.platform{
+  color: #A0A0A0;
+  font-size: 17px;
+  word-spacing: 3px;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.8);
+  box-shadow: 0px 0px 5px 0px black;
+}
+.platform button{
+  margin:3% 0;
+    padding: 1% 6%;
   border-radius: 5px;
   font-size: 19px;
   background-color: rgba(255, 255, 255, 0.7);
@@ -204,14 +213,17 @@ transition: all 0.5s;
 transition-timing-function: ease-in-out;
   color:black;
   border:0;
-  opacity: 0;
-
 }
-.content button:hover{
-  border:1px gray;
+.platform button:hover{
   color:#0077b3;
   background-color: rgba(0, 0, 0, 0.7);
 }
+.platform img{
+  padding: 2%;
+  width: 70%;
+}
+.platform .device{color:white;padding: 1%;font-size: 17px;}
+.platform .glyphicon{margin: 2% 0;color:#006699;font-size: 19px;}
 .subscribe{
   cursor: pointer;
   text-shadow:0px 0px 4px black;
@@ -220,13 +232,13 @@ transition-timing-function: ease-in-out;
   opacity: 0;
   color:white;
   font-size: 28px;
-  padding: 1%;
+  padding-top: 3%;
       -webkit-transition: all 0.5s; /* Safari */
 transition: all 0.5s;
 transition-timing-function: ease-in-out;
 }
 .subscribe:hover{
-  color:#0077b3;
+  color:#004466;
 }
 section.video{
   box-shadow: 0px 0px 5px 0px black;
@@ -271,7 +283,6 @@ transition: all 1s;
   background-color: rgb(48, 48, 48);
   color:silver;
   display: none;
-  
   }
   .video-title{
     color:#484848;
@@ -346,10 +357,19 @@ transition: all 1s;
       <p>we're a next-generation VR video platform startup launched by the co-founder of Tapjoy, a leading mobile advertising company.</p>
        <p>We are funded by top-tier Silicon Valley VCs including DCM, Sierra ventures, VR Fund as well as leading Hollywood/media investors. </p>
     </div>
-
-    <button>Download</button>
     <div class="subscribe"><span class="glyphicon glyphicon-envelope" style="font-size:23px;color:#0077b3"></span> Subscribe to our Weekly Updates</div>
+
   </div>
+
+      <div class="platform">
+        <img src="responsive-design.png"/><br>
+        <p>Get the product on multi-platform</p>
+
+        <span class="glyphicon glyphicon-th-large"></span><span class="device">Computer&nbsp&nbsp&nbsp&nbsp</span>
+        <span class="glyphicon glyphicon-phone"></span><span class="device">Mobile&nbsp&nbsp&nbsp&nbsp</span>
+        <span class="glyphicon glyphicon-modal-window"></span><span class="device">Tablet</span><br>
+      <button>Download</button>
+    </div>
  </section>
 
  <section class="video">
@@ -411,14 +431,14 @@ $(function(){
 
 });
 $(document).ready(function() {
-  $("#search, input").mouseover(function(){
-    $("input").animate({
+  $("#search").mouseover(function(){
+    $(".navbar input").animate({
         opacity: 1,
         width:'150px'
       },700);
 });
     $(".navbar").mouseleave(function(){
-    $("input").animate({
+    $(".navbar input").animate({
         opacity: 0,
         width:'0px'
       },300);
@@ -448,10 +468,10 @@ $(document).ready(function() {
               fire=1;
                           $(".content").delay(1100).animate({
                   opacity:'1',
-                  top:'-=35px'
+                  top:'-=40px'
                 }, 1200);
 
-             $(".subscribe, .content button").delay(2000).animate({opacity:'1'},500);
+             $(".subscribe, .platform").delay(2000).animate({opacity:'1'},500);
               }
 
               if( $(".video").offset().top < $(window).scrollTop() + $(window).height() ){
