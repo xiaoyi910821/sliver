@@ -62,14 +62,13 @@ $(function() {
             // window.location = '/thank-you'; // redirect a user to another page
             alert('if you want to see data, please include form.js at header'); // for now we'll just alert the user
             $("#sign, .alert").delay(500).fadeOut(500);
-
         }
 
     });
 
 
         // stop the form from submitting the normal way and refreshing the page
-        //event.preventDefault();
+        event.preventDefault();
     });
 
 });
