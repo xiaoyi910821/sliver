@@ -12,7 +12,7 @@ $data           = array();      // array to pass back data
         $errors['email'] = 'Email is required.';
 
     if (empty($_POST['password']))
-        $errors['password'] = 'password is required.';
+        $errors['password'] = 'Password is required.';
 
 // return a response ===========================================================
 
@@ -35,5 +35,5 @@ $data           = array();      // array to pass back data
     }
 
     // return all our data to an AJAX call
-    echo json_encode($data);
+    //echo json_encode($data);
 ?>
