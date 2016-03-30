@@ -27,13 +27,15 @@ body, html{
    font-family: Century Gothic, sans-serif;
   background: #101010 ;
   width: 100%;
-  height: 100%;
+    height: 100%;
 }
 section.first{
+    text-align: center;
   box-shadow: 0px 0px 4px 0px #101010;
   position: relative;
   width: 100%;
-  height: 95%;
+  height:95%;
+    min-height: 350px;
 }
 .navbar{
   padding: 0.5%;
@@ -76,10 +78,10 @@ section.first{
   overflow: hidden;
   position:relative; 
 }
-.fadein img ,.fadein video
+.fadein img
 { 
   position:absolute; 
-  overflow: hidden;
+    overflow: hidden;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -106,17 +108,27 @@ section.first{
   font-size: 16px;
   padding: 1%;
   margin: 2% 35%;
-  min-width: 100px;
+  min-width: 300px;
     border-radius: 5px;
     transition-timing-function: ease-in-out;
     -webkit-transition: all 0.9s; /* Safari */
     transition: all 0.9s;
 }
+
 .third-title:hover{
   color:white;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .first-title, .second-title, .third-title{opacity: 0;}
+@media screen and (max-width: 750px) {
+    section.first{height:50%;}
+    .large-title{margin-top:-150px;}
+    .first-title, .second-title{font-size:25px;}
+    .third-title {
+        margin: 2% 6%;
+        font-size:14px;
+    }
+}
 .signup, .signin, .search{color:#e8e8e8;
 -webkit-transition: color 0.5s; /* Safari */
 transition: color 0.5s;
@@ -171,11 +183,9 @@ background: url(bg2.jpg) 50% 0 no-repeat fixed;
   text-align: center;
   padding-top:13%;
   width: 100%;
-  color: #A0A0A0 ;
-  text-shadow:0px 0px 2px black;
+  color: #cccccc ;
   position: absolute;
-  z-index: 100
-  ;
+  z-index: 100;
 }
 
 .content-left, .content-right{
@@ -568,9 +578,9 @@ $(document).ready(function() {
 
   //var content_top=$(window).height();
   //alert(content_top);
-
+var fire=0;
  $(window).scroll( function(){
-    var fire=0;
+    
         /* Check the location of each desired element */
              if( $(".second").offset().top < $(window).scrollTop() + $(window).height() ){
                 $(".second-layer").animate({opacity:'0.7'},1200);
