@@ -1,6 +1,6 @@
 $(function() {
     $(".sign-tag").click(function(){
-        $('.form-group').removeClass('has-error'); // remove the error class
+       $('.form-group').removeClass('has-error'); // remove the error class
     $('.help-block').remove(); // remove the error text
        /// alert("test");
        $(this).css({"color": "white"});

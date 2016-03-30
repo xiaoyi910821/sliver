@@ -10,7 +10,7 @@
 }
 * { Box-sizing: Border-box }
 #sign{
-  display: none;
+  display: block;
       box-shadow: 0px 0px 5px 0px black;
     background-color: #383838;
     position: fixed;
