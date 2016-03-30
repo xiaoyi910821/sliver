@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="social-block/css/style.css"> <!-- load bootstrap via CDN -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- load jquery via CDN -->
-    <script src="magic.js"></script> <!-- load our javascript file -->
 </head>
 
 <body>
 
 <div class="col-sm-6 col-sm-offset-3" id="sign">
     <div class="event">
-        <div id="signin-tag"><div class="active"></div> Sign In </div>
+        <div class="sign-tag" style="border-right:3px solid #282828"><div class="active"></div> Sign In </div>
 
        
-        <div id="signup-tag"><div class="active" style="display:none"></div> Sign Up <span id="close">X</span></div>
+        <div class="sign-tag"><div class="active" style="opacity:0"></div> Sign Up <span id="close">X</span></div>
     </div>
 
     <!-- OUR FORM -->
@@ -52,6 +51,13 @@
 <script>
 $(document).ready(function() {
 
+    $(".sign-tag").click(function(){
+       /// alert("test");
+    $(this).find(".active").css({"opacity": "1"});
+    if($(this).index()==0)$(".sign-tag").eq(1).find(".active").css({"opacity": "0"});
+    else $(".sign-tag").eq(0).find(".active").css({"opacity": "0"});
+});
+
     // process the form
     $('form').submit(function(event) {
 
@@ -72,7 +78,7 @@ $(document).ready(function() {
                         encode          : true
         })
             // using the done promise callback
-            .    .done(function(data) {
+            .done(function(data) {
 
         // log data to the console so we can see
         console.log(data);

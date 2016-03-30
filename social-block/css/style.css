@@ -33,7 +33,6 @@
     text-align: center;
     display: inline-block;
 }
-#signin-tag{border-right:3px solid #282828;}
 #sign #close{
   color:white;
   position: absolute;
@@ -43,8 +42,9 @@
   right: 0;
 }
 .event .active{
+  z-index: 999;
     color:white;
-    position: absolute;
+     position: absolute;
      width: 0; 
      top:10%;
     height: 0; 

@@ -460,10 +460,10 @@ text-transform: uppercase;
 
 <div class="col-sm-6 col-sm-offset-3" id="sign">
     <div class="event">
-        <div id="signin-tag"><div class="active"></div> Sign In </div>
+        <div class="sign-tag" style="border-right:3px solid #282828"><div class="active"></div> Sign In </div>
 
        
-        <div id="signup-tag"><div class="active" style="display:none"></div> Sign Up <span id="close">X</span></div>
+        <div class="sign-tag"><div class="active" style="opacity:0"></div> Sign Up <span id="close">X</span></div>
     </div>
 
     <!-- OUR FORM -->
@@ -542,11 +542,16 @@ $(document).ready(function() {
 
     $(".reset").click(function(){
         $("#sign").fadeToggle();
-      // alert("test");
     });
     $("#close").click(function(){
         $("#sign").fadeOut();
     });
+    $(".sign-tag").click(function(){
+    $(this).find(".active").css({"opacity": "1"});
+    if($(this).index()==0)$(".sign-tag").eq(1).find(".active").css({"opacity": "0"});
+    else $(".sign-tag").eq(0).find(".active").css({"opacity": "0"});
+});
+
   //var content_top=$(window).height();
   //alert(content_top);
 
