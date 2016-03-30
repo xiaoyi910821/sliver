@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="css/screen.css" >
     <link rel="stylesheet" href="social-block/css/style.css">
   <link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+   <script  type="text/javascript" src="form.js"></script>
+
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <style>
@@ -470,13 +472,13 @@ text-transform: uppercase;
     <form action="process.php" method="POST">
         
         <!-- NAME -->
-        <div id="name-group" class="form-group">
-           <input class="col-sm-8 col-sm-offset-2" type="text" class="form-control" name="name" placeholder="username">
+        <div id="email-group" class="form-group">
+           <input class="col-sm-8 col-sm-offset-2" type="text" class="form-control" name="email" placeholder="exa@example.com">
             <!-- errors will go here -->
         </div>
         <!-- SUPERHERO ALIAS -->
-        <div id="superhero-group" class="form-group">
-            <input class="col-sm-8 col-sm-offset-2"  type="password" class="form-control" name="superheroAlias" placeholder="password">
+        <div id="password-group" class="form-group">
+            <input class="col-sm-8 col-sm-offset-2"  type="password" class="form-control" name="password" placeholder="password">
             <!-- errors will go here -->
         </div>
 
@@ -542,21 +544,21 @@ $(document).ready(function() {
 
     $(".reset").click(function(){
         $("#sign").fadeToggle();
+        $('.form-group').removeClass('has-error'); // remove the error class
+    $('.help-block').remove(); // remove the error text
     });
     $("#close").click(function(){
         $("#sign").fadeOut();
     });
-    $(".sign-tag").click(function(){
-    $(this).find(".active").css({"opacity": "1"});
-    if($(this).index()==0)$(".sign-tag").eq(1).find(".active").css({"opacity": "0"});
-    else $(".sign-tag").eq(0).find(".active").css({"opacity": "0"});
+
+
 });
 
   //var content_top=$(window).height();
   //alert(content_top);
 
  $(window).scroll( function(){
-    
+    var fire=0;
         /* Check the location of each desired element */
              if( $(".second").offset().top < $(window).scrollTop() + $(window).height() ){
                 $(".second-layer").animate({opacity:'0.7'},1200);
@@ -581,7 +583,6 @@ $(document).ready(function() {
 
             });
 
-  })
 </script>
 
 </body>
