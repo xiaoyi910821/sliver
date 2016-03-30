@@ -117,12 +117,12 @@ section.first{
   background-color: rgba(0, 0, 0, 0.5);
 }
 .first-title, .second-title, .third-title{opacity: 0;}
-.reset, .search{color:#e8e8e8;
+.signup, .signin, .search{color:#e8e8e8;
 -webkit-transition: color 0.5s; /* Safari */
 transition: color 0.5s;
 transition-timing-function: ease-in-out;
 }
-.reset:hover, .search:hover{
+.signup:hover, .signin:hover, .search:hover{
   color:#0077b3 !important; 
 }
 .transition{
@@ -336,14 +336,14 @@ text-transform: uppercase;
     <div class="collapse navbar-collapse" id="myNavbar">
       <a href="sliver.html"><img src="logo.gif"/></a>
       <ul class="nav navbar-nav">
-        <li><a href="#"><em class="reset"><b>Sliver TV</b></em></a></li>
+        <li><a href="#"><em><b>Sliver TV</b></em></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li><input type="text" name="search"></li>
         <li ><a href="#" class="search"><span class="glyphicon glyphicon-search"></span> search |</a></li>
-        <li><a href="#" class="reset" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up |</a></li>
-        <li ><a href="#" class="reset" id="signin"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+        <li><a href="#" class="signin" ><span class="glyphicon glyphicon-user"></span> Sign In |</a></li>
+        <li ><a href="#" class="signup" ><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
       </ul>
     </div>
   </div>
@@ -461,11 +461,12 @@ text-transform: uppercase;
   </footer>
 
 <div class="col-sm-6 col-sm-offset-3" id="sign">
+  <span id="close">X</span>
     <div class="event">
         <div class="sign-tag" style="border-right:3px solid #282828"><div class="active"></div> Sign In </div>
 
        
-        <div class="sign-tag"><div class="active" style="opacity:0"></div> Sign Up <span id="close">X</span></div>
+        <div class="sign-tag"><div class="active" style="opacity:0"></div> Sign Up </div>
     </div>
 
     <!-- OUR FORM -->
@@ -473,7 +474,7 @@ text-transform: uppercase;
         
         <!-- NAME -->
         <div id="email-group" class="form-group">
-           <input class="col-sm-8 col-sm-offset-2" type="text" class="form-control" name="email" placeholder="exa@example.com">
+           <input class="col-sm-8 col-sm-offset-2" type="text" class="form-control" name="email" placeholder="example@example.com">
             <!-- errors will go here -->
         </div>
         <!-- SUPERHERO ALIAS -->
@@ -542,12 +543,23 @@ $(document).ready(function() {
 
 });
 
-    $(".reset").click(function(){
+    $(".signin, .signup").click(function(){
         $("#sign").fadeToggle();
         $('.form-group').removeClass('has-error'); // remove the error class
     $('.help-block').remove(); // remove the error text
-    });
+    if($(this).is(".signin")){
+      $(".sign-tag").eq(0).css({"color":"white"});
+      $(".sign-tag").eq(0).find(".active").css({"opacity": "1"});
+    }
+    if($(this).is(".signup")){
+      $(".sign-tag").eq(1).css({"color":"white"});
+      $(".sign-tag").eq(1).find(".active").css({"opacity": "1"});
+    }
+  });
+
     $("#close").click(function(){
+      $(".sign-tag").css({"color":"#bbbbbb"});
+      $(".active").css({"opacity": "0"});
         $("#sign").fadeOut();
     });
 

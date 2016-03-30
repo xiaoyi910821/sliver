@@ -3,6 +3,8 @@ $(function() {
         $('.form-group').removeClass('has-error'); // remove the error class
     $('.help-block').remove(); // remove the error text
        /// alert("test");
+       $(this).css({"color": "white"});
+       $(this).siblings().css({"color": "#bbbbbb"});
     $(this).find(".active").css({"opacity": "1"});
     if($(this).index()==0)$(".sign-tag").eq(1).find(".active").css({"opacity": "0"});
     else $(".sign-tag").eq(0).find(".active").css({"opacity": "0"});
