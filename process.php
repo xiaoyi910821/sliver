@@ -35,5 +35,5 @@ $data           = array();      // array to pass back data
     }
 
     // return all our data to an AJAX call
-    echo json_encode("test");
+    echo "test";
 ?>
