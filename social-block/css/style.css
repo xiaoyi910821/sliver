@@ -1,0 +1,171 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+  font-style: normal;
+  font-size: 1.5em;
+  color: #fff;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+}
+* { Box-sizing: Border-box }
+#sign{
+  display: none;
+    box-shadow: 0px 0px 5px 0px black;
+    background-color: #383838;
+    position: fixed;
+    padding: 0;
+    top:45%;
+    margin-top: -200px;
+    color:#bbbbbb;
+    min-width: 450px;
+    z-index: 999;
+}
+#sign h1{
+    text-align: center;
+}
+.event div{
+    cursor:pointer;
+    padding: 2% 0;
+    width: 49%;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+}
+#signin-tag{border-right:3px solid #282828;}
+#sign #close{
+  color:white;
+  position: absolute;
+  top:0;
+  font-size: 15px;
+  padding-right: 4px;
+  right: 0;
+}
+.event .active{
+    color:white;
+    position: absolute;
+     width: 0; 
+     top:10%;
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid #383838;
+ }
+
+form{
+    padding-top:6%;
+    background-color: #282828;
+}
+
+form input{
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5%;
+    margin: 2% 0;
+}
+ form .col-sm-3{
+    font-weight: normal;
+    margin: 3% 0;
+}
+.button{
+    width: 100%;
+    text-align: center;
+}
+form button{
+    padding: 2% 8%;
+    color: white;
+    border: 1px solid silver;
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 3%;
+}
+.top {
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+}
+.top .face {
+  width: 50%;
+  float: left;
+  height: inherit;
+  z-index: 2;
+  background-color: #3B5998;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  transition: all, 0.2s;
+}
+.top .face:hover {
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  transition: all, 0.2s;
+  z-index: 100000;
+}
+.top .tweet {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 50%;
+  height: inherit;
+  float: left;
+  background-color: #4099FF;
+  transition: all, 0.2s;
+  z-index: 1;
+}
+.top .tweet:hover {
+  transition: all, 0.2s;
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  z-index: 10000;
+}
+
+.bottom {
+  height: 100px;
+  width: 100%;
+  background-color: #999;
+}
+.bottom .dribble {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 50%;
+  height: inherit;
+  background-color: #c73b6f;
+  float: left;
+  transition: all, 0.2s;
+  z-index: 1;
+}
+.bottom .dribble:hover {
+  transition: all, 0.2s;
+  z-index: 10000000;
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+.bottom .pin {
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  display: block;
+  background-color: #cb2028;
+  width: 50%;
+  height: inherit;
+  float: left;
+  transition: all, 0.2s;
+}
+.bottom .pin:hover {
+  transition: all, 0.2s;
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+  z-index: 99999999999;
+}

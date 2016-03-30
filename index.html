@@ -4,8 +4,9 @@
   <title>sliver tv demo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.css">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/screen.css" >
+    <link rel="stylesheet" href="social-block/css/style.css">
   <link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -114,13 +115,13 @@ section.first{
   background-color: rgba(0, 0, 0, 0.5);
 }
 .first-title, .second-title, .third-title{opacity: 0;}
-#reset, #search{color:#e8e8e8;
+.reset, .search{color:#e8e8e8;
 -webkit-transition: color 0.5s; /* Safari */
 transition: color 0.5s;
 transition-timing-function: ease-in-out;
 }
-#reset:hover, #search:hover{
-  color:#0077b3;
+.reset:hover, .search:hover{
+  color:#0077b3 !important; 
 }
 .transition{
 
@@ -333,14 +334,14 @@ text-transform: uppercase;
     <div class="collapse navbar-collapse" id="myNavbar">
       <a href="sliver.html"><img src="logo.gif"/></a>
       <ul class="nav navbar-nav">
-        <li><a href="#"><em id="reset"><b>Sliver TV</b></em></a></li>
+        <li><a href="#"><em class="reset"><b>Sliver TV</b></em></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li><input type="text" name="search"></li>
-        <li ><a href="#" id="search"><span class="glyphicon glyphicon-search"></span> search |</a></li>
-        <li><a href="#" id="reset"><span class="glyphicon glyphicon-user"></span> Sign Up |</a></li>
-        <li><a href="#" id="reset"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+        <li ><a href="#" class="search"><span class="glyphicon glyphicon-search"></span> search |</a></li>
+        <li><a href="#" class="reset" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up |</a></li>
+        <li ><a href="#" class="reset" id="signin"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
       </ul>
     </div>
   </div>
@@ -457,6 +458,44 @@ text-transform: uppercase;
    
   </footer>
 
+<div class="col-sm-6 col-sm-offset-3" id="sign">
+    <div class="event">
+        <div id="signin-tag"><div class="active"></div> Sign In </div>
+
+       
+        <div id="signup-tag"><div class="active" style="display:none"></div> Sign Up <span id="close">X</span></div>
+    </div>
+
+    <!-- OUR FORM -->
+    <form action="process.php" method="POST">
+        
+        <!-- NAME -->
+        <div id="name-group" class="form-group">
+           <input class="col-sm-8 col-sm-offset-2" type="text" class="form-control" name="name" placeholder="username">
+            <!-- errors will go here -->
+        </div>
+        <!-- SUPERHERO ALIAS -->
+        <div id="superhero-group" class="form-group">
+            <input class="col-sm-8 col-sm-offset-2"  type="password" class="form-control" name="superheroAlias" placeholder="password">
+            <!-- errors will go here -->
+        </div>
+
+        <div class="button"><button >SIGN IN</button></div>
+        <div class="social-login">
+             <div class="top">
+  <a href="#" class="face"><i class="zocial-facebook"></i></a>
+  <a href="#" class="tweet"><i class="zocial-twitter"></i></a>
+ </div>
+ 
+  <div class="bottom">
+  <a href="#" class="dribble"><i class="zocial-dribbble"></i></a>
+  <a href="#" class="pin"><i class="zocial-pinterest"></i></a>
+ </div>
+
+        </div>
+
+    </form>
+</div>
 
 <script>
 $(function(){
@@ -473,8 +512,9 @@ $(function(){
     $(".third-title").delay(700).animate({opacity: 1}, 500);
 
 });
+
 $(document).ready(function() {
-  $("#search").mouseover(function(){
+  $(".search").mouseover(function(){
     $(".navbar input").animate({
         opacity: 1,
         width:'150px'
@@ -497,7 +537,16 @@ $(document).ready(function() {
     $('html,body').animate({
         scrollTop: $(".content").offset().top},
         1600);
+
 });
+
+    $(".reset").click(function(){
+        $("#sign").fadeToggle();
+      // alert("test");
+    });
+    $("#close").click(function(){
+        $("#sign").fadeOut();
+    });
   //var content_top=$(window).height();
   //alert(content_top);
 
