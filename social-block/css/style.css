@@ -93,6 +93,14 @@ form button{
   color:#e8e8e8 !important;
 
 }
+.alert-success{
+  border-radius: 0px;
+	text-align: center;
+	font-size: 25px;
+	color:white;
+	background-color: #282828;
+	border: none;
+}
 .top {
   width: 100%;
   height: 100px;

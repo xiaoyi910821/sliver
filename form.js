@@ -61,7 +61,7 @@ $(function() {
             // usually after form submission, you'll want to redirect
             // window.location = '/thank-you'; // redirect a user to another page
             alert('if you want to see data, please include form.js at header'); // for now we'll just alert the user
-            $("#sign, .alert").delay(500).fadeOut(500);
+            $("#sign, .alert").delay(1000).fadeOut(800);
         }
 
     });

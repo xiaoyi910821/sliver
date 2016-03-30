@@ -8,10 +8,10 @@ $data           = array();      // array to pass back data
     // if any of these variables don't exist, add an error to our $errors array
 
     if (empty($_POST['password']))
-        $errors['password'] = 'Password is required.';
+        $errors['password'] = 'Password is required';
 
     if (empty($_POST['email']))
-        $errors['email'] = 'Email is required.';
+        $errors['email'] = 'Email is required';
 
 
 
@@ -32,7 +32,7 @@ $data           = array();      // array to pass back data
 
         // show a message of success and provide a true success variable
         $data['success'] = true;
-        $data['message'] = 'Success!';
+        $data['message'] = 'Success';
     }
 
     // return all our data to an AJAX call
