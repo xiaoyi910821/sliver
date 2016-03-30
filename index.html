@@ -545,16 +545,17 @@ $(document).ready(function() {
 
     $(".signin, .signup").click(function(){
         $("#sign").fadeToggle();
-        //$('.form-group').removeClass('has-error'); // remove the error class
-    //$('.help-block').remove(); // remove the error text
-    if($(this).is(".signin")){
+        $('.form-group').removeClass('has-error'); // remove the error class
+    $('.help-block').remove(); // remove the error text
+    
+   /* if($(this).is(".signin")){
       $(".sign-tag").eq(0).css({"color":"white"});
       $(".sign-tag").eq(0).find(".active").css({"opacity": "1"});
     }
     if($(this).is(".signup")){
       $(".sign-tag").eq(1).css({"color":"white"});
       $(".sign-tag").eq(1).find(".active").css({"opacity": "1"});
-    }
+    }*/
   });
 
     $("#close").click(function(){
