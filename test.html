@@ -8,7 +8,94 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- load jquery via CDN -->
        <script  type="text/javascript" src="form.js"></script>
 </head>
+<style>
+section.video{
+  box-shadow: 0px 0px 5px 0px black;
+  background-color: #e8e8e8;
+  padding: 6%;
+  opacity: 1;
+  position: relative;
+  text-align: center;
+}
+.float-box{
+  cursor: pointer;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  min-height: 200px;
+  min-width: 300px;
+  width: 25%;
+  box-shadow: 0px 0px 5px 0px gray;
+  margin: 1.5%;
+  -webkit-transition: all 1s; /* Safari */
+transition: all 1s;
+}
+.float-hover{
+  opacity: 0;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(zoom.png) no-repeat center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 6px 0px black;
+    -webkit-transition: all 0.4s; /* Safari */
+transition: all 0.4s;
+}
+.float-hover:hover{
+  opacity: 1;
+}
+.description{
+  z-index: 90;
+  box-shadow: 0px 0px 4px 0px black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3% 0;
+  text-align: center;
+  background-color: rgb(10, 10, 10);
+  color:silver;
+}
+  .video-title{
+    color:#484848;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    padding: 2%;
+      }
+  .large-img{
+    display: none;
+    cursor: default;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.99);
+    position: fixed;
+    z-index: 100;
+      text-align: center;
+ }
+ .large-img:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+ .large-img img{
+  vertical-align: middle;
+display: inline-block;
+ }
+ .large-img span{
+  cursor: pointer;
+  top:0;
+  float: right;
+  color:white;
+  padding: 3%;
+  font-size: 20px;
+ }
 
+</style>
 <body>
 
 <div class="col-sm-6 col-sm-offset-3" id="sign">
@@ -50,5 +137,67 @@
     </form>
 </div>
 
+ <section class="video">
+  <div class="video-title">New Upload This Week</div>
+  <div class="float-box" style="background:url(game1.jpg) center">
+    <div class="float-hover"></div>
+    <div class="large-img"><img src="game1.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+    <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game2.jpg) center">
+          <div class="float-hover"></div>
+    <div class="large-img"><img src="game2.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game3.jpg) center">
+          <div class="float-hover"></div>
+    <div class="large-img"><img src="game3.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div><br>
+
+    <div class="float-box" style="background:url(game4.jpg) center">
+          <div class="float-hover"></div>
+    <div class="large-img"><img src="game4.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game5.jpg) left">
+          <div class="float-hover"></div>
+    <div class="large-img"><img src="game5.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+
+    <div class="float-box" style="background:url(game6.jpg) center">
+          <div class="float-hover"></div>
+    <div class="large-img"><img src="game6.jpg"/><span class="glyphicon glyphicon-remove"></span></div>
+          <div class="description">click to see full video<br>
+      March 27, 2016 upload by Kelsey
+    </div>
+  </div>
+</section>
+<script>
+$(".large-img span").click(function(){
+  $(".large-img").fadeOut();
+
+});
+$(".float-hover").click(function(){
+
+    $(this).next().fadeIn();
+
+});
+
+</script>
 </body>
 </html>
