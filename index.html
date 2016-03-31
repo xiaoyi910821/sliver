@@ -620,8 +620,10 @@ $(document).ready(function() {
 $(".float-hover").click(function(){
 
     $(this).next().fadeIn();
-
-});
+        $(this).next().find("img").delay(300).animate({
+            width: '+=100px'
+          },500);
+      });
 
 
 });

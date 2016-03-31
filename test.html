@@ -7,6 +7,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- load jquery via CDN -->
        <script  type="text/javascript" src="form.js"></script>
+       <script src="transform/jquery.transform2d.js"></script>
 </head>
 <style>
 section.video{
@@ -195,6 +196,9 @@ $(".large-img span").click(function(){
 $(".float-hover").click(function(){
 
     $(this).next().fadeIn();
+    $(this).next().find("img").delay(300).animate({
+            width: '+=100px'
+    },500);
 
 });
 
